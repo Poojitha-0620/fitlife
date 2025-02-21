@@ -1,4 +1,3 @@
-// src/pages/BMI.jsx
 import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Row, Col, Alert, Card } from "react-bootstrap";
 import AOS from "aos";
@@ -8,7 +7,6 @@ import bmi1 from "../assets/bmi1.jpg";
 import { FaCalculator, FaWeight, FaRulerVertical, FaInfoCircle, FaAppleAlt } from "react-icons/fa";
 
 function BMI() {
-  // Initialize AOS animations on mount
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -99,7 +97,7 @@ function BMI() {
           backgroundPosition: "center 100px",
           height: "100vh",
           paddingBlockStart:"100px",
-            // Temporary fallback color
+            
         }}
       >
         <div style={{ height: '100%' }} />

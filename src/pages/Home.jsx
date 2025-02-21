@@ -1,4 +1,4 @@
-// src/pages/Home.js
+
 import React, { useContext } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { FaDumbbell, FaAppleAlt, FaHeartbeat, FaStar } from "react-icons/fa";

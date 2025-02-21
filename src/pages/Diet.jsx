@@ -1,4 +1,3 @@
-// src/pages/Diet.jsx
 import React, { useRef } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -9,7 +8,7 @@ import vegan from "../assets/vegan.jpg";
 import Paleo from "../assets/Paleo.jpg";
 
 function Diet() {
-  // Create a ref for the diet plans section
+ 
   const dietPlansRef = useRef(null);
 
   // Sample diet plans data
@@ -77,7 +76,7 @@ function Diet() {
 
   return (
     <>
-      {/* Hero Section with text aligned at the top */}
+      {/* Hero Section  */}
       <section
         className="diet-hero d-flex align-items-start text-white"
         style={{

@@ -1,4 +1,3 @@
-// src/pages/Contact.js
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -26,16 +25,16 @@ const Contact = () => {
   
 
   const onSubmit = (values, { setSubmitting, resetForm }) => {
-    // Simulate an API call (or any submission logic)
+   
     setTimeout(() => {
-      setSubmitted(true); // Set the success flag
+      setSubmitted(true); 
       setSubmitting(false);
       resetForm();
     }, 1000);
   };
 
   return (
-    // Wrap everything in a div with a radial gradient background
+    
     <div className="contact-page">
       <Container className="py-5">
         <h2>Contact Us</h2>

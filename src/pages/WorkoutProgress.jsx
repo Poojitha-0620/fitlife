@@ -1,10 +1,9 @@
-// src/pages/WorkoutProgress.jsx
 import React from "react";
 import { Container, Row, Col, Card, Table, Button } from "react-bootstrap";
 import { FaDumbbell } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const WorkoutProgress = () => {
-  // Sample data for recent workouts
+  
   const workoutData = [
     { date: "2025-02-01", workout: "Full Body HIIT", duration: "45 mins", calories: 500 },
     { date: "2025-02-03", workout: "Strength Training", duration: "60 mins", calories: 600 },
@@ -13,7 +12,7 @@ const WorkoutProgress = () => {
   ];
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-5 work-container">
       <Row>
         <Col>
           <Card className="mb-4 shadow">
@@ -44,9 +43,12 @@ const WorkoutProgress = () => {
                   ))}
                 </tbody>
               </Table>
-              <Button variant="primary" className="mt-3">
-                View Detailed Analytics
-              </Button>
+              <div className="d-flex justify-content-between mt-3">
+    <Link to="/dashboard">
+      <Button variant="secondary">Back to Dashboard</Button>
+    </Link>
+    <Button variant="primary">View Detailed Analytics</Button>
+  </div>
             </Card.Body>
           </Card>
         </Col>
@@ -61,9 +63,7 @@ const WorkoutProgress = () => {
                 Your overall workout performance is improving! Keep up the great work and consider
                 increasing the intensity gradually. Consistency is key.
               </p>
-              <Link to="/dashboard">
-      <Button variant="secondary" className="mt-2">Back to Dashboard</Button>
-    </Link>
+             
             </Card.Body>
           </Card>
         </Col>

@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
     
       <AuthProvider>
-    <BrowserRouter> {/* Wrap App with BrowserRouter */}
+    <BrowserRouter>
       <App />
     </BrowserRouter>
     </AuthProvider>

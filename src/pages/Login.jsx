@@ -1,4 +1,3 @@
-// src/pages/Login.js
 import React, { useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -33,7 +32,7 @@ function Login() {
 
   // Handle form submission
   const onSubmit = (values, { setSubmitting }) => {
-    // Use the part of the email before the "@" as the user's name
+   
     const userName = values.email.split("@")[0];
     login({ email: values.email, name: userName });
     setSubmitting(false);

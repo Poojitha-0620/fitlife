@@ -1,4 +1,3 @@
-// src/pages/Settings.jsx
 import React, { useContext, useState } from "react";
 import { Container, Card, Form, Button, Row, Col } from "react-bootstrap";
 import { Formik, Field, ErrorMessage } from "formik";
@@ -12,7 +11,7 @@ const Settings = () => {
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState("");
 
-  // Default settings (use user settings if available, otherwise defaults)
+ 
   const initialValues = {
     notifications: user?.settings?.notifications || "enabled",
     privacy: user?.settings?.privacy || "public",
@@ -30,14 +29,14 @@ const Settings = () => {
     updateUser({ settings: values });
     setSuccessMessage("Settings updated successfully!");
     setSubmitting(false);
-    // Navigate to the dashboard after successful save
+   
     navigate("/dashboard");
-    // Optionally, clear the message after some time:
+    
     setTimeout(() => setSuccessMessage(""), 3000);
   };
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-4 settings-container">
       <Card className="shadow p-3">
         <Card.Body>
           <h3>Account Settings</h3>

@@ -1,4 +1,3 @@
-// src/pages/Profile.jsx
 import React, { useContext, useState, useEffect } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import { AuthContext } from "../context/AuthContext";
@@ -12,7 +11,7 @@ const Profile = () => {
   const [editing, setEditing] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
 
-  // Set initial form values from user data
+  
   const [initialValues, setInitialValues] = useState({
     firstName: "",
     lastName: "",
@@ -29,7 +28,7 @@ const Profile = () => {
     }
   }, [user]);
 
-  // Validation schema using Yup with a case-insensitive email regex
+  
   const validationSchema = Yup.object({
     firstName: Yup.string().required("First name is required"),
     lastName: Yup.string().required("Last name is required"),

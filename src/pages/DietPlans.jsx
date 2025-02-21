@@ -1,11 +1,10 @@
-// src/pages/DietPlans.jsx
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { FaAppleAlt } from "react-icons/fa";
-import "aos/dist/aos.css"; // Ensure AOS is initialized elsewhere (e.g., in App.js)
+import "aos/dist/aos.css"; 
 import { Link } from "react-router-dom";
 const DietPlans = () => {
-  // Sample diet plans data
+ 
   const dietPlans = [
     {
       id: "1",
@@ -34,7 +33,7 @@ const DietPlans = () => {
   ];
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-4 diet-container">
       <h1 className="mb-4">Diet Plans Overview</h1>
         <Link to="/dashboard">
             <Button variant="secondary" className="m-2">Back to Dashboard</Button>

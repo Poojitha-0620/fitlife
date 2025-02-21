@@ -1,20 +1,19 @@
-// src/context/AuthContext.js
 import React, { createContext, useState } from "react";
 
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  // Initially, no user is logged in
+ 
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Simulated login method
+  //  login method
   const login = (userData) => {
     setUser(userData);
     setIsAuthenticated(true);
   };
 
-  // Simulated signup method
+  // signup method
   const signup = (userData) => {
     setUser(userData);
     setIsAuthenticated(true);
@@ -26,7 +25,7 @@ const AuthProvider = ({ children }) => {
     setIsAuthenticated(false);
   };
 
-  // Optional: Update user profile data
+  // Update user profile data
   const updateUser = (newData) => {
     setUser((prevUser) => ({ ...prevUser, ...newData }));
   };

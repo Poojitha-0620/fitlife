@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { FaHeartbeat, FaChartBar, FaLightbulb } from "react-icons/fa"; // Added FaLightbulb
+import { FaHeartbeat, FaChartBar, FaLightbulb } from "react-icons/fa"; 
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 
@@ -18,7 +18,7 @@ const BMIStats = () => {
   };
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-4 bmi-container">
       <h1 className="mb-4">BMI Stats & Health Insights</h1>
       <Row>
         <Col md={6} data-aos="fade-up">
@@ -36,7 +36,7 @@ const BMIStats = () => {
         <Col md={6} data-aos="fade-up">
           <Card className="mb-4 shadow text-center">
             <Card.Body>
-              <FaLightbulb size={50} className="text-primary mb-2" /> {/* Added icon */}
+              <FaLightbulb size={50} className="text-primary mb-2" /> 
               <Card.Title>Health Insights</Card.Title>
               <Card.Text>{bmiData.advice}</Card.Text>
               <Button variant="outline-warning" size="sm">Get Recommendations</Button>

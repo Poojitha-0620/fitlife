@@ -1,11 +1,10 @@
-// src/pages/Signup.js
 import React, { useContext } from "react";
 import { Container, Row, Col, Form as BootstrapForm, Button } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
- // Make sure to create/update this CSS file
+ 
 import Sign from "../assets/signup.webp";
 
 function Signup() {
@@ -42,7 +41,7 @@ function Signup() {
 
   // Handle form submission
   const onSubmit = (values, { setSubmitting }) => {
-    // Simulate a signup process
+    
     signup({
       firstName: values.firstName,
       lastName: values.lastName,

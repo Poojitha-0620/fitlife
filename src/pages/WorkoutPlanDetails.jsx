@@ -1,4 +1,3 @@
-// src/pages/WorkoutPlanDetails.jsx
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { Container, Card, Button } from "react-bootstrap";
