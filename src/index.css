@@ -11,3 +11,348 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+:root {
+  --header-height: 70px;
+}
+
+body {
+  scroll-padding-top: var(--header-height);
+}
+
+
+
+/* Navbar.css */
+
+/* Navbar background */
+.custom-navbar {
+  background: radial-gradient(circle at center, #0678f3, #00d4ff);
+  box-shadow: 0 4px 6px rgba(244, 243, 243, 0.1);
+  padding: 10px 20px;
+
+}
+
+/* Navbar brand */
+.custom-navbar .navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.custom-navbar .navbar-brand:hover {
+  color: #ffcc00 !important;
+}
+
+/* Navbar links */
+.custom-navbar .nav-link {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin-right: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+.nav-link-custom:hover, .nav-link-custom:hover * {
+  color: #e31111 !important; /* Change to your desired hover color */
+}
+/* Navbar Toggle Button */
+.custom-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+
+.custom-navbar .navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Active Link */
+.custom-navbar .nav-link.active {
+  color: #ffcc00 !important;
+  font-weight: bold;
+}
+/* In your CSS file */
+.sticky-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  
+}
+
+
+/* Responsive */
+@media (max-width: 991px) {
+  .custom-navbar .nav-link {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/*home  Hero Section */
+.hero-section1 {
+  background: url("./assets/hero.png") center/cover;
+  background-position: center 100px;
+  background-size: cover;
+  padding-top: 70px; 
+  height: 90vh;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Features Section */
+.feature-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #f8f9fa;
+}
+
+/* Call-to-Action Section */
+.cta-section {
+  background: #007bff;
+  color: white;
+}
+
+/*workout 🔥 Hero Section */
+.hero-section2 {
+  background: url("./assets/workout.png") center/cover no-repeat;
+  background-position: center 0px;
+  background-size: cover;
+  height: 180vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: center;
+  position: relative;
+  padding-top: 220px; 
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.hero-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* 🏋️‍♂️ Workout Cards */
+.workout-card {
+  transition: transform 0.3s ease-in-out;
+}
+.workout-card-img {
+  width: 100%;
+  height: 200px;  /* Set a fixed height */
+  object-fit: cover;  /* Ensures the image covers the area without distortion */
+}
+
+
+.workout-card:hover {
+  transform: scale(1.05);
+}
+
+.diet-hero {
+  padding-top: 90px; /* or however tall your header is */
+}
+
+
+/*product*/
+/* Centering the title */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Product Cards */
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+/*login*/
+
+
+
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  background: url("./assets/login.png") center/cover no-repeat; 
+  background-position: center 100px; 
+  padding-top: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Optional gradient overlay on top of the image */
+.login-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, rgba(209, 255, 230, 0.6), rgba(138, 161, 153, 0.6));
+  /* Adjust colors & opacity as desired */
+  z-index: 1;
+}
+
+/* The container that holds the form content. 
+   Using relative positioning ensures it appears above the overlay. */
+.login-box {
+  position: relative;
+  z-index: 2; /* So it's above the overlay */
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  background: url("./assets/login.png") center/cover no-repeat, rgba(255, 255, 255, 0.9);
+  /* The above background-blend-mode is automatically 'overlay' or 'normal' 
+     but you could use background-blend-mode: multiply; if you prefer */
+  
+}
+
+/* Padding for the icon inside the fields */
+.field-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 1.2rem;
+}
+
+.pl-5 {
+  padding-left: 2.5rem !important;
+}
+
+/* Forgot Password Link */
+.forgot-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Additional styling for headings, form spacing, etc. */
+h2 {
+  font-weight: bold;
+  color: #333;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+}
+
+/* For a subtle box shadow on the login box */
+.login-box.shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/*signup*/
+
+.form-column {
+  background-color: #fefefe; 
+}
+
+
+.signup-form-wrapper {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+
+}
+
+
+.text-column {
+  background: url("./assets/signup.webp") center/cover no-repeat;
+  background-position: center 35px; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  
+ 
+}
+
+
+.text-column h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.text-column p {
+  font-size: 1.2rem;
+}
+
+/* Additional spacing for radio buttons */
+.d-flex.gap-3 > label {
+  margin-right: 15px;
+}
+
+/*contact*/
+
+
+
+.contact-page {
+  min-height: 100vh;
+  background-position: center 0px; 
+  padding-top: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: radial-gradient(circle at center, #f6d365, #fda085);
+ 
+}
