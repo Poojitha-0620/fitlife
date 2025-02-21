@@ -175,12 +175,11 @@ function WorkoutPlanDetails() {
   }
 
   return (
-    <Container className="mt-4">
-      <Card className="shadow"   style={{backgroundImage: `url(${workout.image})`,backgroundSize: "cover", backgroundPosition: "center",color: "white",
-          height: "100vh",
-          padding: "0",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+    <Container className="mt-5 pt-5" >
+      <Card className="shadow"   style={{backgroundImage: `url(${workout.image})`,
+            overflow: "hidden",
+backgroundSize: "cover",
+          backgroundPosition: "100px",
           color: "#ffffe0",
           position: "relative",
         }}>
@@ -195,15 +194,13 @@ function WorkoutPlanDetails() {
             padding: "20px",
             borderRadius: "10px",
             height: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
+            
             zIndex: -1,
           }}
         ></div>
         
-        <Card.Body>
-          <Card.Title>{workout.name}</Card.Title>
+        <Card.Body style={{ position: "relative", zIndex: 2, padding: "20px" }}>
+          <Card.Title style={{ fontWeight: "bold", fontSize: "1.8rem" }}>{workout.name}</Card.Title>
           <Card.Text>{workout.description}</Card.Text>
           <Link to="/workout">
             <Button variant="secondary">Back to Workouts</Button>

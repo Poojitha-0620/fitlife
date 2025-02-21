@@ -69,17 +69,19 @@ function DietPlanDetails() {
   }
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-4 diet-plan-container">
       <Card className="shadow" 
       style={{
         background: "radial-gradient(circle,#d4fc79, #96e6a1)",
         padding: "20px",
+        
         borderRadius: "15px",
       }}>
         <Card.Img variant="top" src={plan.image} alt={plan.name} style={{
     display: "flex", 
     justifyContent: "center",
     alignItems: "center",
+    
     width: "50%",
     height: "auto",
     margin: "0 auto",
