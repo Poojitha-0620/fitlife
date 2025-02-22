@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
  
-import Sign from "../assets/signup.webp";
+
 
 function Signup() {
   const { signup } = useContext(AuthContext);

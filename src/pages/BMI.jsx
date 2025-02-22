@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Form, Button, Row, Col, Alert, Card } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import bmi1 from "../assets/bmi1.jpg";  
+
 
 import { FaCalculator, FaWeight, FaRulerVertical, FaInfoCircle, FaAppleAlt } from "react-icons/fa";
 

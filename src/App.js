@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useContext } from "react";
+import React, { useRef, useEffect, } from "react";
 
 import { Routes, Route } from "react-router-dom";
 import Profile from "./pages/Profile";

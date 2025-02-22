@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Headroom from "react-headroom";
 import NavigationBar from "./Navbar";
 
 const Header = ({ footerRef }) => {

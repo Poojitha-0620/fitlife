@@ -15,8 +15,7 @@ import {
   FaEnvelope,
   FaSignOutAlt,
   FaTachometerAlt,
-  FaSun,
-  FaMoon,
+  
 } from "react-icons/fa";
 import "../Styles/Navbar.css";
 
