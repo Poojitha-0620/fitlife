@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, } from "react";
-
 import { Routes, Route } from "react-router-dom";
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashboard";
@@ -13,8 +12,13 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Workout from "./pages/Workout";
 import WorkoutPlanDetails from "./pages/WorkoutPlanDetails";
+import WorkoutEquipments from "./pages/WorkoutEquipments"; 
+import MemoryGame from "./pages/MemoryGame";
 import Diet from "./pages/Diet";
 import DietPlanDetails from "./pages/DietPlanDetails";
+import ProteinShakes from "./pages/ProteinShakes";  
+import HealthyFood from "./pages/HealthyFood";  
+import Cart from "./pages/Cart";
 import BMI from "./pages/BMI";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -39,13 +43,18 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/workout" element={<Workout />} />
         <Route path="/workout/:id" element={<WorkoutPlanDetails />} />
+        <Route path="/workoutequipments" element={<WorkoutEquipments />} />
         <Route path="/diet" element={<Diet />} />
         <Route path="/diet/:id" element={<DietPlanDetails />} />
+        <Route path="/proteinshakes" element={<ProteinShakes />} />  
+        <Route path="/healthyfood" element={<HealthyFood />} />
+        <Route path="/cart" element={<Cart />} /> 
         <Route path="/bmi" element={<BMI />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/profile" element={<Profile />} />
         <Route path="/dashboard/settings" element={<Settings />} />
-        <Route path="/dashboard/workout-progress" element={<WorkoutProgress />} />
+        <Route path="/dashboard/workout-progress" element={<WorkoutProgress />} /> 
+        <Route path="/memorygame" element={<MemoryGame/>} />
         <Route path="/dashboard/diet-plans" element={<DietPlans />} />
         <Route path="/dashboard/bmi-stats" element={<BMIStats />} />
         <Route path="/login" element={<Login />} />

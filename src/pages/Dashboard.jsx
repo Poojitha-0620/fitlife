@@ -2,18 +2,12 @@ import React, { useContext } from "react";
 import { Container, Row, Col, Card, Button, ListGroup, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import { 
-  FaUserCircle, 
-  FaDumbbell, 
-  FaAppleAlt, 
-  FaCalculator, 
-  FaChartLine, 
-  FaCalendarAlt 
-} from "react-icons/fa";
+import { FaUserCircle, FaDumbbell, FaAppleAlt, FaCalculator, FaChartLine, FaCalendarAlt } from "react-icons/fa";
 import "aos/dist/aos.css";
 
+
 function Dashboard() {
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
 
   // Dummy progress data
   const progressData = {
@@ -24,22 +18,22 @@ function Dashboard() {
 
   // Dummy recent activities
   const recentActivities = [
-    { date: "2025-09-01", activity: "Full Body HIIT", calories: 500 },
-    { date: "2025-09-02", activity: "Strength Training", calories: 400 },
-    { date: "2025-09-03", activity: "Yoga", calories: 200 },
+    { date: "2025-02-01", activity: "Full Body HIIT", calories: 500 },
+    { date: "2025-02-02", activity: "Strength Training", calories: 400 },
+    { date: "2025-02-03", activity: "Yoga", calories: 200 },
   ];
 
   // Dummy upcoming goals
   const upcomingGoals = [
-    { date: "2025-09-10", goal: "Increase bench press by 5kg" },
-    { date: "2025-09-15", goal: "Lose 1kg" },
-    { date: "2025-09-20", goal: "Try a new vegan recipe" },
+    { date: "2025-03-10", goal: "Increase bench press by 5kg" },
+    { date: "2025-03-15", goal: "Lose 1kg" },
+    { date: "2025-03-20", goal: "Try a new vegan recipe" },
   ];
 
   return (
     <Container fluid className="mt-5 pt-5">
       <Row>
-        {/* Sidebar Navigation */}
+       
         <Col md={3} className="bg-light p-3" data-aos="fade-right">
           <div className="d-flex flex-column align-items-center mb-3">
             <FaUserCircle size={80} className="text-primary" />
@@ -66,11 +60,15 @@ function Dashboard() {
             </ListGroup.Item>
             
           </ListGroup>
+
+          <Button variant="danger" onClick={logout} className="mt-3 w-100">
+           Logout
+          </Button>
         </Col>
 
-        {/* Main Dashboard Content */}
+        
         <Col md={9} data-aos="fade-up">
-          {/* Welcome Banner */}
+          
           <Card className="mb-4 shadow mt-3">
             <Card.Body className="text-center">
               <h1 >Welcome to Your Dashboard</h1>
@@ -78,7 +76,10 @@ function Dashboard() {
             </Card.Body>
           </Card>
 
-          {/* Progress Cards */}
+
+
+
+          
           <Row className="mb-4">
             <Col md={4} data-aos="fade-up">
               <Card className="shadow text-center">
@@ -135,7 +136,9 @@ function Dashboard() {
             </Col>
           </Row>
 
-          {/* Recent Activities Section */}
+          
+
+          
           <Row className="mb-4" data-aos="fade-up">
             <Col>
               <Card className="shadow">
@@ -166,7 +169,7 @@ function Dashboard() {
             </Col>
           </Row>
 
-          {/* Upcoming Goals Section */}
+         
           <Row data-aos="fade-up">
             <Col>
               <Card className="shadow">

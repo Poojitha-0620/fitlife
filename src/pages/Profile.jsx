@@ -46,12 +46,12 @@ const Profile = () => {
   };
 
   return (
-    <Container className="mt-4">
+    <Container   style={{marginTop:"100px"}}>
       <Row>
-        {/* Profile Card */}
+        
         <Col md={4}>
           <Card className="shadow">
-            <Card.Img variant="top" src={profile} alt="Profile" />
+            <Card.Img variant="top" src={profile} alt="Profile" className="mx-auto d-block"  style={{ width:"280px", height:"280px", objectFit:"cover", }}/>
             <Card.Body className="text-center">
               <Card.Title>
                 {user?.firstName || user?.name} {user?.lastName}
@@ -68,10 +68,10 @@ const Profile = () => {
           </Card>
         </Col>
 
-        {/* Edit Profile Form */}
+      
         <Col md={8}>
           {editing && (
-            <Card className="shadow p-3">
+            <Card className="shadow p-3 " style={{marginTop:"2px"}}>
               <Card.Body>
                 <h3>Edit Profile</h3>
                 <Formik

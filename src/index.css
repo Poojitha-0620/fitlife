@@ -22,11 +22,14 @@ body {
   scroll-padding-top: var(--header-height);
 }
 
-
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-sizing: border-box;
+}
 
 /* Navbar.css */
-
-/* Navbar background */
 .custom-navbar {
   background: radial-gradient(circle at center, #0678f3, #00d4ff);
   box-shadow: 0 4px 6px rgba(244, 243, 243, 0.1);
@@ -34,7 +37,7 @@ body {
 
 }
 
-/* Navbar brand */
+
 .custom-navbar .navbar-brand {
   font-size: 1.8rem;
   font-weight: bold;
@@ -46,7 +49,7 @@ body {
   color: #ffcc00 !important;
 }
 
-/* Navbar links */
+
 .custom-navbar .nav-link {
   font-size: 1.2rem;
   font-weight: 500;
@@ -56,11 +59,18 @@ body {
 }
 
 
+.nav-icon {
+  color: white; 
+  transition: color 0.3s ease-in-out; 
+}
 
+.nav-icon:hover {
+  color: red; 
+}
 .nav-link-custom:hover, .nav-link-custom:hover * {
   color: #e31111 !important; 
 }
-/* Navbar Toggle Button */
+
 .custom-navbar .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.5);
   background-color: transparent;
@@ -71,11 +81,12 @@ body {
   box-shadow: none;
 }
 
-/* Active Link */
+
 .custom-navbar .nav-link.active {
   color: #ffcc00 !important;
   font-weight: bold;
 }
+
 
 .sticky-navbar {
   position: fixed;
@@ -86,12 +97,50 @@ body {
 }
 
 
+
+.navbar .food-link {
+  color: white !important;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+
+.navbar .food-link:hover {
+  color: #ff4d4d !important; 
+}
+
+
+.nav-link-custom {
+  display: flex;
+  align-items: center; 
+  gap: 5px; 
+}
+
+.food-dropdown .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.food-dropdown .dropdown-toggle:hover svg {
+  color: red !important;
+}
+
+
 /* Responsive */
 @media (max-width: 991px) {
   .custom-navbar .nav-link {
-    text-align: center;
+    
+    text-align: left;
     padding: 10px;
   }
+}
+
+.carousel {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /*home  Hero Section */
@@ -106,8 +155,15 @@ body {
   justify-content: center;
   align-items: center;
 }
+.hero-carousel img {
+  height: 550px; 
+  object-fit: cover;
+}
+.hero-carousel {
+  margin-top: 80px;
+}
 
-/* Features Section */
+
 .feature-card {
   transition: transform 0.3s ease-in-out;
 }
@@ -116,18 +172,16 @@ body {
   transform: scale(1.05);
 }
 
-/* Testimonials Section */
 .testimonials-section {
   background-color: #f8f9fa;
 }
 
-/* Call-to-Action Section */
 .cta-section {
   background: #007bff;
   color: white;
 }
 
-/*workout 🔥 Hero Section */
+/*workout  Hero Section */
 .hero-section2 {
   background: url("./assets/workout.png") center/cover no-repeat;
   background-position: center 0px;
@@ -172,7 +226,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* 🏋️‍♂️ Workout Cards */
+/*  Workout Cards */
 .workout-card {
   transition: transform 0.3s ease-in-out;
 }
@@ -219,8 +273,6 @@ input {
 
 /*login*/
 
-
-
 .login-page {
   position: relative;
   min-height: 100vh;
@@ -242,7 +294,6 @@ input {
   width: 100%;
   height: 100%;
   background: linear-gradient(160deg, rgba(209, 255, 230, 0.6), rgba(138, 161, 153, 0.6));
- 
   z-index: 1;
 }
 
@@ -254,10 +305,8 @@ input {
   max-width: 400px;
   border-radius: 10px;
   background: url("./assets/login.png") center/cover no-repeat, rgba(255, 255, 255, 0.9);
+ }
  
-  
-}
-
 
 .field-icon {
   position: absolute;
@@ -333,14 +382,12 @@ button[type="submit"] {
   font-size: 1.2rem;
 }
 
-/* Additional spacing for radio buttons */
+
 .d-flex.gap-3 > label {
   margin-right: 15px;
 }
 
 /*contact*/
-
-
 
 .contact-page {
   min-height: 100vh;
@@ -366,4 +413,21 @@ button[type="submit"] {
 }
 .settings-container{
   padding-top: 80px; 
+}
+.img-fluid:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.img-fluid{
+  border-radius: 5px;
+}
+.healthfood:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.healthfood{
+  border-radius: 5px;
+}
+.notFound{
+  z-index: 1;
 }

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import diet from "../assets/diet.webp";
@@ -6,10 +6,21 @@ import ketoDiet from "../assets/ketoDiet.webp";
 import med from "../assets/med.jpg";
 import vegan from "../assets/vegan.jpg";
 import Paleo from "../assets/Paleo.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Diet() {
  
   const dietPlansRef = useRef(null);
+
+
+   useEffect(() => {
+      AOS.init({
+        duration: 3000,  
+        easing: "ease-in-out",
+        once: true,      
+      });
+    }, []);
 
   // Sample diet plans data
   const dietPlans = [
@@ -76,8 +87,8 @@ function Diet() {
 
   return (
     <>
-      {/* Hero Section  */}
-      <section
+      
+      <section data-aos="fade-down"
         className="diet-hero d-flex align-items-start text-white"
         style={{
           background: `url(${diet}) center/cover no-repeat`,
@@ -85,7 +96,7 @@ function Diet() {
           height: "220vh",
         }}
       >
-        <Container className="text-center pt-2">
+        <Container className="text-center pt-2"  >
           <h1 className="display-4 fw-bold text-dark">
             Healthy Eating for a Better Life
           </h1>
@@ -98,14 +109,14 @@ function Diet() {
         </Container>
       </section>
 
-      {/* Diet Plans Section */}
+      
       <section   ref={dietPlansRef} className="py-5" >
         <Container>
           <h2 className="text-center fw-bold mb-4">Recommended Diet Plans</h2>
           <Row className="g-4">
             {dietPlans.map((plan) => (
               <Col md={3} key={plan.id}>
-                <Card className="shadow">
+                <Card className="shadow" data-aos="zoom-in-up">
                   <Card.Img variant="top" src={plan.image} alt={plan.name} style={{ width: "100%",  height: "200px", objectFit: "cover", borderRadius: "10px",  }} />
                   <Card.Body>
                     <Card.Title>{plan.name}</Card.Title>
@@ -121,14 +132,14 @@ function Diet() {
         </Container>
       </section>
 
-      {/* Daily Food Habits Section */}
+     
       <section className="bg-light py-5">
         <Container>
           <h2 className="text-center fw-bold mb-4">Daily Food Habits</h2>
           <Row className="g-4">
             {foodHabits.map((habit) => (
               <Col md={6} key={habit.id}>
-                <Card className="p-3 shadow">
+                <Card className="p-3 shadow" data-aos="zoom-in-down">
                   <Card.Body>
                     <Card.Title>{habit.title}</Card.Title>
                     <Card.Text>{habit.description}</Card.Text>

@@ -18,7 +18,7 @@ const Settings = () => {
     theme: user?.settings?.theme || "light",
   };
 
-  // Validation schema (ensuring a value is selected for each)
+  // Validation schema
   const validationSchema = Yup.object({
     notifications: Yup.string().required("Select an option"),
     privacy: Yup.string().required("Select your privacy setting"),

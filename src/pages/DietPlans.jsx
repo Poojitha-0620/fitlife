@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { FaAppleAlt } from "react-icons/fa";
 import "aos/dist/aos.css"; 
 import { Link } from "react-router-dom";
+
 const DietPlans = () => {
  
   const dietPlans = [
@@ -53,9 +54,12 @@ const DietPlans = () => {
                 <Card.Text>
                   <strong>Daily Calories:</strong> {plan.calories}
                 </Card.Text>
-                <Button variant="outline-success" size="sm">
-                  View Details
-                </Button>
+                <Link to={`/diet/${plan.id}`}>
+                  <Button variant="outline-success" size="sm">
+                     View Details
+                  </Button>
+                </Link>
+                
               </Card.Body>
             </Card>
           </Col>

@@ -11,9 +11,9 @@ const BMIStats = () => {
     advice: "Maintain a balanced diet and regular exercise for optimal health. Hope you follow balanced diet",
     bmiHistory: [
       { date: "2025-02-01", bmi: 23.0 },
-      { date: "2025-04-15", bmi: 22.8 },
-      { date: "2025-06-01", bmi: 22.5 },
-      { date: "2025-08-15", bmi: 22.3 },
+      { date: "2025-02-12", bmi: 22.8 },
+      { date: "2025-02-24", bmi: 22.5 },
+      { date: "2025-02-28", bmi: 22.3 },
     ],
   };
 

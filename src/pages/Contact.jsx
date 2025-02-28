@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useState,  useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Container, Button, Alert } from "react-bootstrap";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+
+
+ useEffect(() => {
+          AOS.init({
+            duration: 4000,  
+            easing: "ease-in-out",
+            once: true,      
+          });
+        }, []);
+
 
   const initialValues = {
     name: "",
@@ -35,7 +47,9 @@ const Contact = () => {
 
   return (
     
-    <div className="contact-page">
+    <div className="contact-page"  data-aos="flip-left"
+    data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000">
       <Container className="py-5">
         <h2>Contact Us</h2>
         {submitted && (

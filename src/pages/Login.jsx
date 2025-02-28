@@ -1,4 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Container, Form as BootstrapForm, Button, Row, Col } from "react-bootstrap";
@@ -9,6 +11,16 @@ import { FaUser, FaLock } from "react-icons/fa";
 function Login() {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
+
+
+   useEffect(() => {
+        AOS.init({
+          duration: 4000,  
+          easing: "ease-in-out",
+          once: true,      
+        });
+      }, []);
+  
 
   // Initial form values
   const initialValues = {
@@ -40,9 +52,9 @@ function Login() {
   };
 
   return (
-    <div className="login-page">
-      <Container fluid className="d-flex justify-content-center align-items-center min-vh-100">
-        <div className="login-box p-4 shadow">
+    <div className="login-page" >
+      <Container fluid className="d-flex justify-content-center align-items-center min-vh-100"  >
+        <div className="login-box p-4 shadow" data-aos="fade-down">
           <h2 className="text-center mb-4">Your Fitness Awaits — Log In Now!</h2>
           <Formik
             initialValues={initialValues}
@@ -50,50 +62,38 @@ function Login() {
             onSubmit={onSubmit}
           >
             {({ isSubmitting }) => (
-              <Form>
-                {/* Email Field */}
+              <Form data-aos="flip-up" >
+                
                 <BootstrapForm.Group className="mb-3 position-relative">
                   <FaUser className="field-icon" />
-                  <Field
-                    type="email"
-                    name="email"
-                    className="form-control pl-5"
-                    placeholder="Username (Email)"
-                  />
+                  <Field type="email" name="email" className="form-control pl-5" placeholder="Username (Email)"/>
                   <ErrorMessage name="email" component="div" className="text-danger mt-1" />
                 </BootstrapForm.Group>
 
-                {/* Password Field */}
+                
                 <BootstrapForm.Group className="mb-3 position-relative">
                   <FaLock className="field-icon" />
-                  <Field
-                    type="password"
-                    name="password"
-                    className="form-control pl-5"
-                    placeholder="Password"
-                  />
+                  <Field type="password" name="password" className="form-control pl-5" placeholder="Password"/>
                   <ErrorMessage name="password" component="div" className="text-danger mt-1" />
                 </BootstrapForm.Group>
 
-                {/* Remember Me & Forgot Password */}
+                
                 <Row className="mb-3">
                   <Col xs={6} className="d-flex align-items-center">
                     <Field type="checkbox" name="rememberMe" id="rememberMe" className="me-1" />
-                    <label htmlFor="rememberMe" className="mb-0 text-white">
-                      Remember Me
-                    </label>
+                    <label htmlFor="rememberMe" className="mb-0 text-white">Remember Me</label>
                   </Col>
                   <Col xs={6} className="text-end">
-                    <Link to="/forgot-password" className="forgot-link text-white">
-                      Forgot Password?
-                    </Link>
+                    <Link to="/forgot-password" className="forgot-link text-white">Forgot Password?</Link>
                   </Col>
                 </Row>
 
-                {/* Submit Button */}
-                <Button type="submit" variant="primary" className="w-100" disabled={isSubmitting}>
-                  Login
-                </Button>
+                
+                <Button type="submit" variant="primary" className="w-100" disabled={isSubmitting}>Login </Button>
+
+                <p className="mt-3 text-center text-white">Don't have an account?{" "}
+                  <Link to="/signup" className="text-dark fw-bold"> Sign Up</Link>
+                </p>
               </Form>
             )}
           </Formik>

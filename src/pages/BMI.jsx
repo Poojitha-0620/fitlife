@@ -86,7 +86,7 @@ function BMI() {
 
   return (
     <>
-      {/* Hero Section */}
+     
       <section
         className="bmi-hero text-center text-white d-flex align-items-center"
         data-aos="fade-up"
@@ -107,7 +107,7 @@ function BMI() {
         </Container>
       </section>
 
-      {/* BMI Calculator Form */}
+      
       <Container className="my-5" data-aos="fade-up">
         <Form onSubmit={calculateBMI}>
           <Row>
@@ -150,7 +150,7 @@ function BMI() {
         )}
       </Container>
 
-      {/* BMI Categories Section */}
+      
       <Container className="my-5" data-aos="fade-up">
         <h2 className="text-center fw-bold mb-4">BMI Categories</h2>
         <Row className="g-4">
@@ -169,7 +169,7 @@ function BMI() {
         </Row>
       </Container>
 
-      {/* Health Tips Section */}
+     
       <Container className="my-5" data-aos="fade-up">
         <h2 className="text-center fw-bold mb-4">Health Tips</h2>
         <Row className="g-4">

@@ -9,7 +9,7 @@ function Products() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Fetch products from an API
+  
   useEffect(() => {
     AOS.init({ duration: 1000 });
 
@@ -22,7 +22,7 @@ function Products() {
       });
   }, []);
 
-  // Filter products based on search term
+  
   const filteredProducts = products.filter(product =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -31,7 +31,7 @@ function Products() {
     <Container className="mt-4">
       <h2 className="text-center" data-aos="fade-down">Our Products</h2>
 
-      {/* Search Bar */}
+      
       <Form.Group className="mb-3" controlId="search">
         <Form.Control
           type="text"
@@ -41,7 +41,7 @@ function Products() {
         />
       </Form.Group>
 
-      {/* Products Grid */}
+     
       <Row>
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (

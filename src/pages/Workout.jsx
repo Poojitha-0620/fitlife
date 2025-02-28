@@ -1,4 +1,3 @@
-// src/pages/Workout.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -12,15 +11,15 @@ import eat from "../assets/eat.webp";
 import hydrate from "../assets/hydrate.webp";
 
 function Workout() {
-  // Initialize AOS animations
+  
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  // Ref for scrolling down to content
+  
   const contentRef = useRef(null);
 
-  // Custom Workout Data (Balanced Fitness & Diet Theme)
+ 
   const workouts = [
     {
       id: 1,
@@ -60,15 +59,14 @@ function Workout() {
     },
   ];
 
-  // Search State
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Filter workouts based on search
+  
   const filteredWorkouts = workouts.filter((workout) =>
     workout.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Function to scroll down to the content section
+  
   const scrollToContent = () => {
     if (contentRef.current) {
       contentRef.current.scrollIntoView({ behavior: "smooth" });
@@ -77,7 +75,7 @@ function Workout() {
 
   return (
     <>
-      {/* Hero Section with AOS Animation */}
+     
       <div className="hero-section2 text-center" data-aos="fade-up">
         <div className="hero-content">
           <h1>FitLife</h1>
@@ -89,9 +87,9 @@ function Workout() {
         </div>
       </div>
 
-      {/* Content Section: Search Bar & Workout Cards */}
+      
       <Container ref={contentRef} className="mt-4">
-        {/* Search Bar */}
+       
         <Form.Group className="mb-4">
           <Form.Control
             type="text"
@@ -101,7 +99,7 @@ function Workout() {
           />
         </Form.Group>
 
-        {/* Workout Cards Section */}
+        
         <Row className="g-4">
           {filteredWorkouts.length > 0 ? (
             filteredWorkouts.map((workout) => (
@@ -111,7 +109,7 @@ function Workout() {
                   <Card.Body>
                     <Card.Title>{workout.name}</Card.Title>
                     <Card.Text>{workout.description}</Card.Text>
-                    {/* Clicking "Start Plan" navigates to the details page */}
+                    
                     <Link to={`/workout/${workout.id}`}>
                       <Button variant="primary">Start Plan</Button>
                     </Link>

@@ -63,6 +63,9 @@ function DietPlanDetails() {
         <Link to="/diet">
           <Button variant="secondary">Back to Diet Plans</Button>
         </Link>
+        <Link to="/dashboard">
+          <Button variant="secondary">Back to Dashboard</Button>
+        </Link>
       </Container>
     );
   }
@@ -94,6 +97,9 @@ function DietPlanDetails() {
           <Link to="/diet">
             <Button variant="secondary">Back to Diet Plans</Button>
           </Link>
+          <Link to="/dashboard">
+          <Button variant="secondary" className="ms-3">Back to Dashboard</Button>
+        </Link>
         </Card.Body>
       </Card>
     </Container>
