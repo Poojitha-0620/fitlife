@@ -141,7 +141,7 @@ function Home() {
           <h2 className="text-center fw-bold mb-4">Why Choose FitLife?</h2>
           <Row className="g-4">
             {[
-              { icon: <FaDumbbell size={40} className="text-primary glow-icon" />, title: " Workouts", text: "Custom workout plans based on your fitness level." },
+              { icon: <FaDumbbell size={40} className="text-primary glow-icon" />, title: " Workouts", text: "Custom workout plans based on fitness level." },
               { icon: <FaAppleAlt size={40} className="text-success glow-icon" />, title: "Healthy Diet Plans", text: "Nutrition-rich meal plans tailored for you." },
               { icon: <FaHeartbeat size={40} className="text-danger glow-icon" />, title: "Track Your Progress", text: "Monitor your BMI & health improvements." },
               { icon: <FaStar size={40} className="text-warning glow-icon" />, title: "Expert Guidance", text: "Get fitness & diet tips from professionals." }
