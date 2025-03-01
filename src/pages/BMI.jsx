@@ -121,7 +121,7 @@ function BMI() {
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
                   placeholder="Enter your weight in kg"
-                />
+                  className="none"  />
               </Form.Group>
             </Col>
             <Col md={6}>
@@ -134,7 +134,7 @@ function BMI() {
                   value={height}
                   onChange={(e) => setHeight(e.target.value)}
                   placeholder="Enter your height in cm"
-                />
+                  className="none" />
               </Form.Group>
             </Col>
           </Row>
@@ -156,7 +156,7 @@ function BMI() {
         <Row className="g-4">
           {bmiCategories.map((item, index) => (
             <Col md={3} key={index}>
-              <Card className="shadow h-100">
+              <Card className="shadow h-100  animated-border">
                 <Card.Body className="text-center">
                   <div style={{ fontSize: "2rem" }}>{item.icon}</div>
                   <Card.Title>{item.category}</Card.Title>
@@ -175,7 +175,7 @@ function BMI() {
         <Row className="g-4">
           {healthTips.map((tip, index) => (
             <Col md={4} key={index}>
-              <Card className="shadow h-100">
+              <Card className="shadow h-100 animated-border">
                 <Card.Body className="text-center">
                   <div style={{ fontSize: "2rem" }}>{tip.icon}</div>
                   <Card.Title>{tip.tip}</Card.Title>

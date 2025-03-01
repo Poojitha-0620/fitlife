@@ -10,16 +10,14 @@ import medit from "../assets/medit.jpg";
 import eat from "../assets/eat.webp";
 import hydrate from "../assets/hydrate.webp";
 
+
 function Workout() {
-  
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  
   const contentRef = useRef(null);
 
- 
   const workouts = [
     {
       id: 1,
@@ -61,12 +59,10 @@ function Workout() {
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  
   const filteredWorkouts = workouts.filter((workout) =>
     workout.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  
   const scrollToContent = () => {
     if (contentRef.current) {
       contentRef.current.scrollIntoView({ behavior: "smooth" });
@@ -75,7 +71,6 @@ function Workout() {
 
   return (
     <>
-     
       <div className="hero-section2 text-center" data-aos="fade-up">
         <div className="hero-content">
           <h1>FitLife</h1>
@@ -87,31 +82,27 @@ function Workout() {
         </div>
       </div>
 
-      
       <Container ref={contentRef} className="mt-4">
-       
         <Form.Group className="mb-4">
           <Form.Control
             type="text"
             placeholder="Search workouts..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-          />
+         className="none" />
         </Form.Group>
 
-        
         <Row className="g-4">
           {filteredWorkouts.length > 0 ? (
             filteredWorkouts.map((workout) => (
               <Col md={6} lg={4} key={workout.id} data-aos="fade-up">
-                <Card className="p-3 shadow workout-card">
+                <Card className="p-3 workout-card gradient-border neon-glow">
                   <Card.Img variant="top" src={workout.image} alt={workout.name} className="workout-card-img"/>
                   <Card.Body>
                     <Card.Title>{workout.name}</Card.Title>
                     <Card.Text>{workout.description}</Card.Text>
-                    
                     <Link to={`/workout/${workout.id}`}>
-                      <Button variant="primary">Start Plan</Button>
+                      <Button variant="primary" className="glow-button">Start Plan</Button>
                     </Link>
                   </Card.Body>
                 </Card>

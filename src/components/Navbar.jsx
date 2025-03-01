@@ -23,13 +23,13 @@ function NavigationBar() {
     <Navbar expand="lg" className="custom-navbar">
       <Container>
         
-        <Navbar.Brand as={Link} to="/" className="navbar-brand-custom me-auto" style={{marginLeft:"-50px"}}>
+        <Navbar.Brand as={Link} to="/" className="navbar-brand-custom me-auto" style={{marginLeft:"-55px"}}>
           <img src={logo} alt="FitLife Logo" className="navbar-logo" />
           <span >FitLife</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarNav" />
         <Navbar.Collapse id="navbarNav">
-          <Nav className="ms-auto" style={{marginRight:"-60px"}}>
+          <Nav className="ms-auto" style={{marginRight:"-65px"}}>
             <Nav.Link as={Link} to="/" className="nav-link-custom">
               <FaHome  /> Home
             </Nav.Link>

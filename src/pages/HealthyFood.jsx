@@ -65,8 +65,8 @@ function HealthyFood() {
     }, []);
 
   return (
-    <Container className="py-5 mt-5" data-aos="fade-down">
-      <h2 className="text-center fw-bold mb-4 mt-2">Healthy Food</h2>
+    <Container className="py-5 mt-5 overall" data-aos="fade-down">
+      <h2 className="text-center fw-bold mb-4 mt-2 pro">Healthy Food</h2>
       <p className="text-center text-muted fs-5"><i>Nutritious, Delicious, and Full of Life!</i></p>
 
      
@@ -76,7 +76,7 @@ function HealthyFood() {
           placeholder="Search for healthy food... 🔍"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
-          className="w-50 mx-auto"
+          className="w-50 mx-auto new"
         />
       </Form>
 
@@ -88,18 +88,18 @@ function HealthyFood() {
       ) : (
         categories.map((category) => (
           <div key={category}>
-            <h3 className="mt-4 text-primary" data-aos="fade-right">{category}</h3>
+            <h3 className="mt-4 text-primary excite" data-aos="fade-right">{category}</h3>
             <Row>
               {filteredFoods
                 .filter((food) => food.category === category)
                 .map((food) => (
                   <Col md={4} key={food.id} className="mb-4">
-                    <Card className="shadow"  data-aos="zoom-in-up">
+                    <Card className="shadow square"  data-aos="zoom-in-up">
                       <Card.Img variant="top" src={food.image} alt={food.name} className="healthfood"/>
                       <Card.Body className="text-center">
                         <Card.Title>{food.name}</Card.Title>
                         <Card.Text>₹{food.price}</Card.Text>
-                        <Button variant="success" onClick={() => addToCart(food)}>
+                        <Button variant="info" onClick={() => addToCart(food)}>
                           Add to Cart
                         </Button>
                       </Card.Body>

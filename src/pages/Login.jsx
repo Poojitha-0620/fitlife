@@ -89,7 +89,7 @@ function Login() {
                 </Row>
 
                 
-                <Button type="submit" variant="primary" className="w-100" disabled={isSubmitting}>Login </Button>
+                <Button type="submit" variant="secondary" className="w-100" disabled={isSubmitting}>Login </Button>
 
                 <p className="mt-3 text-center text-white">Don't have an account?{" "}
                   <Link to="/signup" className="text-dark fw-bold"> Sign Up</Link>

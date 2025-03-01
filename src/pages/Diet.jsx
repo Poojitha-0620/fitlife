@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import React, { useRef, useEffect,useState } from "react";
+import { Container, Row, Col, Card, Button, ProgressBar  } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import diet from "../assets/diet.webp";
 import ketoDiet from "../assets/ketoDiet.webp";
@@ -8,11 +8,12 @@ import vegan from "../assets/vegan.jpg";
 import Paleo from "../assets/Paleo.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { GiFruitBowl } from "react-icons/gi";
 
 function Diet() {
- 
-  const dietPlansRef = useRef(null);
-
+  const [flipped, setFlipped] = useState({});
+  const [selectedHabit, setSelectedHabit] = useState(null);
+ const dietPlansRef = useRef(null);
 
    useEffect(() => {
       AOS.init({
@@ -57,24 +58,28 @@ function Diet() {
       title: "Stay Hydrated",
       description:
         "Drink at least 8 glasses of water a day to maintain proper hydration.",
+        calories: 0
     },
     {
       id: 2,
       title: "Eat More Fruits & Veggies",
       description:
         "Aim for 5 servings of colorful fruits and vegetables each day.",
+        calories: 200 
     },
     {
       id: 3,
       title: "Limit Processed Foods",
       description:
         "Choose whole grains, lean proteins, and fresh produce over processed snacks.",
+        calories: 150
     },
     {
       id: 4,
       title: "Practice Portion Control",
       description:
         "Use smaller plates and mindful eating to avoid overeating.",
+        calories: 100
     },
   ];
 
@@ -85,6 +90,10 @@ function Diet() {
     }
   };
 
+
+  const toggleFlip = (id) => {
+    setFlipped((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
   return (
     <>
       
@@ -103,10 +112,12 @@ function Diet() {
           <p className="fs-5 text-dark">
             Discover the perfect diet plan and daily habits for your well-being.
           </p>
-          <Button variant="warning" size="lg" onClick={scrollToDietPlans}>
+          <Button variant="warning" size="lg" onClick={scrollToDietPlans} className="glow-btn">
             Explore Now
           </Button>
         </Container>
+        <img src={<GiFruitBowl />} alt="Fruit" className="floating-icon" style={{ top: "20%", left: "10%" }} />
+
       </section>
 
       
@@ -116,16 +127,18 @@ function Diet() {
           <Row className="g-4">
             {dietPlans.map((plan) => (
               <Col md={3} key={plan.id}>
-                <Card className="shadow" data-aos="zoom-in-up">
+              
+                <Card className="shadow " data-aos="zoom-in-up">
                   <Card.Img variant="top" src={plan.image} alt={plan.name} style={{ width: "100%",  height: "200px", objectFit: "cover", borderRadius: "10px",  }} />
                   <Card.Body>
                     <Card.Title>{plan.name}</Card.Title>
                     <Card.Text>{plan.description}</Card.Text>
                     <Link to={`/diet/${plan.id}`}>
-                      <Button variant="primary">View Plan</Button>
+                      <Button variant="primary" className="glow-button">View Plan</Button>
                     </Link>
                   </Card.Body>
                 </Card>
+     
               </Col>
             ))}
           </Row>
@@ -134,22 +147,40 @@ function Diet() {
 
      
       <section className="bg-light py-5">
-        <Container>
-          <h2 className="text-center fw-bold mb-4">Daily Food Habits</h2>
-          <Row className="g-4">
-            {foodHabits.map((habit) => (
-              <Col md={6} key={habit.id}>
-                <Card className="p-3 shadow" data-aos="zoom-in-down">
-                  <Card.Body>
-                    <Card.Title>{habit.title}</Card.Title>
-                    <Card.Text>{habit.description}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
+      <Container>
+        <h2 className="text-center fw-bold mb-4">Daily Food Habits</h2>
+        <Row className="g-4">
+          {foodHabits.map((habit) => (
+            <Col md={6} key={habit.id}>
+              <div
+                className={`flip-card ${flipped[habit.id] ? "flipped" : ""}`}
+                onMouseEnter={() => toggleFlip(habit.id, true)}  // 🔥 Flip on hover
+                onMouseLeave={() => toggleFlip(habit.id, false)} // 🔥 Unflip when cursor leaves
+                onTouchStart={() => toggleFlip(habit.id, true)}  // 📱 Flip on touch (mobile)
+              >
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <Card.Body>
+                      <Card.Title>{habit.title}</Card.Title>
+                      <Card.Text>{habit.description}</Card.Text>
+                    </Card.Body>
+                  </div>
+                  <div className="flip-card-back">
+                    <Card.Body>
+                      <Card.Title>Calories Intake</Card.Title>
+                      <ProgressBar now={(habit.calories || 0) / 3} label={`${habit.calories || 0} kcal`} animated className={`custom-progress ${habit.calories === 0 ? "zero-calories" : ""}`}
+  style={{
+    color: habit.calories ? "white" : "black", 
+  }}/>
+                    </Card.Body>
+                  </div>
+                </div>
+              </div>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </section>
     </>
   );
 }

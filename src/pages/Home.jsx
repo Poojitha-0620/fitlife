@@ -35,7 +35,7 @@ function Home() {
               <h1 className="display-3 fw-bold">Welcome to FitLife</h1>
               <p className="fs-5">Your Personalized Fitness & Diet Planner for a Healthy Lifestyle.</p>
               <Link to="/signup">
-                <Button variant="warning" size="lg" className="fw-bold mt-3">Get Started</Button>
+                <Button variant="warning" size="lg" className="fw-bold mt-3 glow-btn">Get Started</Button>
               </Link>
             </Carousel.Caption>
           </Carousel.Item>
@@ -46,7 +46,7 @@ function Home() {
               <h1 className="display-3 fw-bold">Balance Your Mind & Body</h1>
               <p className="fs-5">Track your fitness journey with our progress monitoring tools.</p>
               <Link to="/login">
-                <Button variant="warning" size="lg" className="fw-bold mt-3">Get Started</Button>
+                <Button variant="warning" size="lg" className="fw-bold mt-3 glow-btn">Get Started</Button>
               </Link>
             </Carousel.Caption>
           </Carousel.Item>
@@ -61,7 +61,7 @@ function Home() {
               <h1 className="display-3 fw-bold">Eat Healthy, Stay Strong</h1>
               <p className="fs-5">Explore our expert diet plans tailored just for you.</p>
               <Link to="/diet">
-                <Button variant="warning" size="lg" className="fw-bold mt-3">Get Started</Button>
+                <Button variant="warning" size="lg" className="fw-bold mt-3 glow-btn">Get Started</Button>
               </Link>
             </Carousel.Caption>
           </Carousel.Item>
@@ -88,11 +88,11 @@ function Home() {
                 
               </div>
               <div style={{ marginTop: "auto", paddingBottom: "50px",display:"flex",justifyContent:"center",alignItems:"center" }}>
-              <Button variant="dark"  onClick={() => navigate('/memorygame')} className="memory-game-btn" style={{padding:"10px",position:"relative",top:"7px",right:"10px"}}>
+              <Button variant="dark"  onClick={() => navigate('/memorygame')} className="memory-game-btn glow-btn" style={{padding:"10px",position:"relative",top:"7px",right:"10px"}}>
                   Play Workout Memory Game
                 </Button>
                 <Link to="/dashboard">
-                  <Button variant="dark" size="lg" className="fw-bold mt-3">Go to Dashboard</Button>
+                  <Button variant="dark" size="lg" className="fw-bold mt-3 glow-btn">Go to Dashboard</Button>
                 </Link>
               </div>
             </Carousel.Caption>
@@ -110,7 +110,7 @@ function Home() {
                 <h1 className="display-3 fw-bold">Have Questions? Get in Touch</h1>
                 <p className="fs-5">We are here to help you on your fitness journey.</p>
                 <Link to="/contact">
-                  <Button variant="dark" size="lg" className="fw-bold mt-3">Contact Us</Button>
+                  <Button variant="dark" size="lg" className="fw-bold mt-3 glow-btn">Contact Us</Button>
                 </Link>
               </Carousel.Caption>
             </Carousel.Item>
@@ -125,7 +125,7 @@ function Home() {
               }}>
                 <h1 className="display-3 fw-bold">Stay Committed & Achieve More</h1>
                 <p className="fs-5">Your journey to success starts with consistency.</p>
-                <Button variant="dark" size="lg" onClick={logout} className="fw-bold mt-1">
+                <Button variant="dark" size="lg" onClick={logout} className="fw-bold mt-1 glow-btn">
                   Logout
                 </Button>
               </Carousel.Caption>
@@ -141,13 +141,13 @@ function Home() {
           <h2 className="text-center fw-bold mb-4">Why Choose FitLife?</h2>
           <Row className="g-4">
             {[
-              { icon: <FaDumbbell size={40} className="text-primary" />, title: "Personalized Workouts", text: "Custom workout plans based on your fitness level." },
-              { icon: <FaAppleAlt size={40} className="text-success" />, title: "Healthy Diet Plans", text: "Nutrition-rich meal plans tailored for you." },
-              { icon: <FaHeartbeat size={40} className="text-danger" />, title: "Track Your Progress", text: "Monitor your BMI & health improvements." },
-              { icon: <FaStar size={40} className="text-warning" />, title: "Expert Guidance", text: "Get fitness & diet tips from professionals." }
+              { icon: <FaDumbbell size={40} className="text-primary glow-icon" />, title: "Personalized Workouts", text: "Custom workout plans based on your fitness level." },
+              { icon: <FaAppleAlt size={40} className="text-success glow-icon" />, title: "Healthy Diet Plans", text: "Nutrition-rich meal plans tailored for you." },
+              { icon: <FaHeartbeat size={40} className="text-danger glow-icon" />, title: "Track Your Progress", text: "Monitor your BMI & health improvements." },
+              { icon: <FaStar size={40} className="text-warning glow-icon" />, title: "Expert Guidance", text: "Get fitness & diet tips from professionals." }
             ].map((feature, index) => (
               <Col md={3} key={index}>
-                <Card className="text-center p-3 shadow feature-card" data-aos="flip-left">
+                <Card className="text-center p-3 shadow feature-card animated-border" data-aos="flip-left">
                   {feature.icon}
                   <Card.Body >
                     <Card.Title>{feature.title}</Card.Title>
@@ -166,12 +166,12 @@ function Home() {
           <h2 className="text-center fw-bold mb-4">What Our Users Say</h2>
           <Row>
             {[
-              { text: `"FitLife transformed my fitness journey! The workouts and diet plans are easy to follow."`, author: "Sarah M." },
+              { text: `"FitLife transformed my fitness journey! The workouts, diet plans are easy to follow."`, author: "Sarah M." },
               { text: `"I love the progress tracking feature. It keeps me motivated every day!"`, author: "James P." },
               { text: `"Highly recommend FitLife! The personalized plans work wonders."`, author: "Emily R." }
             ].map((testimonial, index) => (
               <Col md={4} key={index}>
-                <Card className="p-3 shadow" data-aos="fade-right" >
+                <Card className="p-3 shadow animated-border" data-aos="fade-right" >
                   <Card.Body data-aos="fade-left">
                     <Card.Text>{testimonial.text}</Card.Text>
                     <h5 className="fw-bold">- {testimonial.author}</h5>
@@ -190,7 +190,7 @@ function Home() {
           <p>Join thousands of users achieving their health goals with FitLife.</p>
           {!isAuthenticated && (
             <Link to="/login">
-              <Button variant="light" size="lg" className="fw-bold">Join Now</Button>
+              <Button variant="light" size="lg" className="fw-bold glow-btn">Join Now</Button>
             </Link>
           )}
         </Container>

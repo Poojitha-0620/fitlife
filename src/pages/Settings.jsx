@@ -36,89 +36,56 @@ const Settings = () => {
   };
 
   return (
+    <div className="settings-wrapper">
     <Container className="mt-4 settings-container">
-      <Card className="shadow p-3">
+      <Card className="shadow p-3 ">
         <Card.Body>
           <h3>Account Settings</h3>
           {successMessage && (
             <p className="text-success mt-3">{successMessage}</p>
           )}
-          <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={handleSave}
-            enableReinitialize
-            validateOnMount
-          >
+          <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSave}  enableReinitialize validateOnMount >
             {({ isSubmitting, isValid }) => (
               <Form>
                 <Row className="mb-3">
-                  <Col md={6}>
+                  <Col md={6} className="settings-group">
                     <Form.Group controlId="formNotifications">
                       <Form.Label>Notifications</Form.Label>
-                      <Field
-                        as="select"
-                        name="notifications"
-                        className="form-control"
-                      >
-                        <option value="enabled">Enabled</option>
+                      <Field as="select"  name="notifications" className="settings-select set" >
+                        <option  value="enabled">Enabled</option>
                         <option value="disabled">Disabled</option>
                       </Field>
-                      <ErrorMessage
-                        name="notifications"
-                        component="div"
-                        className="text-danger"
-                      />
+                      <ErrorMessage  name="notifications"  component="div"  className="settings-error"  />
                     </Form.Group>
                   </Col>
-                  <Col md={6}>
+                  <Col md={6} className="settings-group">
                     <Form.Group controlId="formPrivacy">
                       <Form.Label>Profile Privacy</Form.Label>
-                      <Field
-                        as="select"
-                        name="privacy"
-                        className="form-control"
-                      >
+                      <Field as="select"  name="privacy"  className="settings-select set" >
                         <option value="public">Public</option>
                         <option value="private">Private</option>
                       </Field>
-                      <ErrorMessage
-                        name="privacy"
-                        component="div"
-                        className="text-danger"
-                      />
+                      <ErrorMessage  name="privacy" component="div" className="settings-error"/>
                     </Form.Group>
                   </Col>
                 </Row>
                 <Row className="mb-3">
-                  <Col md={6}>
-                    <Form.Group controlId="formTheme">
+                  <Col md={6} className="settings-group">
+                    <Form.Group controlId="formTheme" >
                       <Form.Label>Theme</Form.Label>
-                      <Field
-                        as="select"
-                        name="theme"
-                        className="form-control"
-                      >
-                        <option value="light">Light</option>
+                      <Field  as="select"  name="theme"  className="settings-select " >
+                        <option  value="light">Light</option>
                         <option value="dark">Dark</option>
                       </Field>
-                      <ErrorMessage
-                        name="theme"
-                        component="div"
-                        className="text-danger"
-                      />
+                      <ErrorMessage  name="theme"  component="div"  className="settings-error"/>
                     </Form.Group>
                   </Col>
                 </Row>
-                <Button
-                  type="submit"
-                  variant="success"
-                  disabled={isSubmitting || !isValid}
-                >
+                <Button type="submit"  variant="success"  className="settings-btn"  disabled={isSubmitting || !isValid}>
                   Save Settings
                 </Button>
                 <Link to="/dashboard">
-      <Button variant="secondary" className="mt-2 ms-2 ">Back to Dashboard</Button>
+      <Button variant="secondary" className="settings-btn mt-2 ms-2 ">Back to Dashboard</Button>
     </Link>
               </Form>
             )}
@@ -126,6 +93,7 @@ const Settings = () => {
         </Card.Body>
       </Card>
     </Container>
+    </div>
   );
 };
 

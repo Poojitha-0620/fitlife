@@ -67,8 +67,8 @@ function ProteinShakes() {
   }, []);
 
   return (
-    <Container  className="py-5 mt-5 " data-aos="fade-down">
-      <h1 className="text-center fw-bold mb-2">Protein Shakes</h1>
+    <Container  className="py-5 mt-5 overall" data-aos="fade-down">
+      <h1 className="text-center fw-bold mb-2 pro">Protein Shakes</h1>
       <p className="text-center text-muted fs-5"><i>Blend, Shake, and Energize!</i></p>
 
 
@@ -77,10 +77,10 @@ function ProteinShakes() {
         <Form.Control
           type="text"
           placeholder="Search Protein Shakes... 🔍"
-          className="w-50 mx-auto"
+          className="w-50 mx-auto new"
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
-        />
+          />
       </div>
 
      
@@ -93,18 +93,18 @@ function ProteinShakes() {
        
         categories.map((category) => (
           <div key={category}>
-            <h3 className="mt-4 text-primary" data-aos="fade-right">{category}</h3>
+            <h3 className="mt-4 text-primary excite" data-aos="fade-right">{category}</h3>
             <Row>
               {filteredShakes
                 .filter((shake) => shake.category === category)
                 .map((shake) => (
                   <Col md={4} key={shake.id} className="mb-4">
-                    <Card className="shadow" data-aos="zoom-in-up">
+                    <Card className="shadow square" data-aos="zoom-in-up">
                       <Card.Img variant="top" src={shake.image} alt={shake.name}  className="img-fluid mx-auto d-block"  style={{ width: "414px", height: "300px", objectFit: "cover"   }}/>
                       <Card.Body className="text-center">
                         <Card.Title>{shake.name}</Card.Title>
                         <Card.Text>₹{shake.price}</Card.Text>
-                        <Button variant="primary" onClick={() => addToCart(shake)}>
+                        <Button variant="info" onClick={() => addToCart(shake)} >
                           Add to Cart
                         </Button>
                       </Card.Body>

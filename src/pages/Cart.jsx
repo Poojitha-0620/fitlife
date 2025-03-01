@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { BsCartX } from "react-icons/bs";
+import { BsCartX , BsBagCheck } from "react-icons/bs";
 import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Cart() {
   const { cart, removeFromCart, addToCart } = useContext(CartContext);
@@ -64,7 +65,11 @@ function Cart() {
               </Col>
             ))}
           </Row>
-
+          {cart.length > 0 && (
+        <button className="fab-cart" onClick={() => window.location.href = "/checkout"}>
+          <BsBagCheck />
+        </button>
+      )}
          
           
         </>

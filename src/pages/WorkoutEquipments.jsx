@@ -42,13 +42,13 @@ const WorkoutEquipments = () => {
   const categories = [...new Set(filteredEquipments.map((item) => item.category))];
 
   return (
-    <Container className="py-5 mt-5" data-aos="fade-down">
-      <h1 className="text-center fw-bold mb-2">Workout Equipments</h1>
+    <Container className="py-5 mt-5 overall" data-aos="fade-down">
+      <h1 className="text-center fw-bold mb-2 pro">Workout Equipments</h1>
       <p className="text-center text-muted fs-5"><i>Level Up Your Workouts! 💪</i></p>
 
       
       <div className="text-center mb-4">
-        <Form.Control type="text" placeholder="Search Workout Equipments... 🔍" className="w-50 mx-auto" value={searchInput}  onChange={(e) => setSearchInput(e.target.value)}/>
+        <Form.Control type="text" placeholder="Search Workout Equipments... 🔍" className="w-50 mx-auto new" value={searchInput}  onChange={(e) => setSearchInput(e.target.value)}/>
       </div>
 
       
@@ -61,13 +61,13 @@ const WorkoutEquipments = () => {
         
         categories.map((category) => (
           <div key={category}>
-            <h3 className="mt-4 text-primary" data-aos="fade-right">{category}</h3>
+            <h3 className="mt-4 text-primary excite" data-aos="fade-right">{category}</h3>
             <Row>
               {filteredEquipments
                 .filter((item) => item.category === category)
                 .map((item) => (
                   <Col md={4} key={item.id} className="mb-4">
-                    <Card className="shadow" data-aos="zoom-in-up">
+                    <Card className="shadow square" data-aos="zoom-in-up">
                       <Card.Img
                         variant="top"
                         src={item.image}
@@ -78,7 +78,7 @@ const WorkoutEquipments = () => {
                       <Card.Body className="text-center">
                         <Card.Title>{item.name}</Card.Title>
                         <Card.Text>₹{item.price}</Card.Text>
-                        <Button variant="primary" onClick={() => addToCart(item)}>
+                        <Button variant="info" onClick={() => addToCart(item)}>
                           Add to Cart
                         </Button>
                       </Card.Body>
