@@ -40,7 +40,7 @@ function Workout() {
     {
       id: 4,
       name: "Yoga & Mindfulness",
-      description: "Enhance flexibility and mental wellness.",
+      description: "Enhance flexibility and mental wellness of yours.",
       image: medit,
     },
     {

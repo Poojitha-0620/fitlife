@@ -28,7 +28,7 @@ function Diet() {
     {
       id: "1",
       name: "Keto Diet",
-      description: "A low-carb, high-fat diet focusing on ketosis for weight loss.",
+      description: "A low-carb, high-fat diet focus on ketosis for weight loss.",
       image: ketoDiet,
     },
     {
